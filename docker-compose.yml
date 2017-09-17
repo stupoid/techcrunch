@@ -16,3 +16,11 @@ services:
     - 80:8080
     volumes:
     - ./src:/usr/src/app
+
+  migrate:
+    build: .
+    command: python manage.py migrate
+    ports:
+    - 80:8080
+    volumes:
+    - ./src:/usr/src/app

@@ -1,0 +1,32 @@
+{% extends 'techcrunch/base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <link href="{% static 'techcrunch/css/register.css' %}" rel="stylesheet">
+  <div class="container">
+    <form class="form-signin" method="post">
+      {% csrf_token %}
+      <h2 class="form-signin-heading">Sign in</h2>
+      {% for field in form %}
+          <!-- {{ field.label_tag }}<br> -->
+          {{ field }}
+          <!-- {% if field.help_text %}
+            <small style="color: grey">{{ field.help_text }}</small>
+          {% endif %} -->
+          {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+          {% endfor %}
+      {% endfor %}
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+  </div> <!-- /container -->
+  <script>
+  var inputs = document.getElementsByTagName("input");
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].className += "form-control";
+    inputs[i].placeholder = inputs[i].name;
+  }
+  </script>
+{% endblock %}
