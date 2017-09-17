@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^signup', views.signup, name='signup'),
     url(r'^map/$', views.map, name='map'),
+    url(r'^shelter_routing/$', views.shelter_routing, name='shelter_routing'),
     url(r'^', views.index, name='index'),
 ]

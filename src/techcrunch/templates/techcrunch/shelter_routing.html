@@ -1,0 +1,19 @@
+{% extends 'techcrunch/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<link href="{% static 'techcrunch/css/shelter_routing.css' %}" rel="stylesheet">
+<div class="container">
+  <div class="form-signin">
+    <h2 class="form-signin-heading">Find me a shelter</h2>
+    <input type="text" name="first_name" class="field-divided" placeholder="First name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First name'"/>&nbsp;<input type="text" name="last_name" class="field-divided" placeholder="Last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last name'"/>
+    <input type="text" name="num_people" class="field-long" placeholder="Number of people" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number of people'"/></br>
+    <label>Are you injured?</label>
+    <select name="injury_status" class="field-select">
+    <option value="Y">Yes</option>
+    <option value="N">No</option>
+    </select></br>
+    <a href="/map/">FIND SHELTER</a>
+  </div>
+</div> <!-- /container -->
+{% endblock %}
