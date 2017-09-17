@@ -38,6 +38,9 @@ def dashboard(request):
 def residents(request):
     return render(request, 'techcrunch/residents.html')
 
+def nearby_shelters(request):
+    return render(request, 'techcrunch/nearby_shelters.html')
+
 def map(request):
 	# r = requests.get('http://www.mapquestapi.com/directions/v2/route?key=UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU' +
 	# 				'&from=San Francisco, CA&to=Oakland,+CA')
