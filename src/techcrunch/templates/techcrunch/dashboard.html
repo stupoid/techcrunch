@@ -4,6 +4,20 @@
 
 {% block content %}
 <link href="{% static 'techcrunch/css/dashboard.css' %}" rel="stylesheet">
+<style>
+.image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+
+h2.image-text {
+  position: absolute;
+  font-size: 3em;
+  top: 100px;
+  left: 110px;
+}
+
+</style>
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
   <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -44,24 +58,36 @@
 
       <section class="row text-center placeholders">
         <div class="col-6 col-sm-3 placeholder">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+          <div class="image">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+            <h2 class="image-text">21</h2>
+          </div>
           <h4>Water</h4>
-          <div class="text-muted">Something else</div>
+          <div class="text-muted">Days left at current capacity</div>
         </div>
         <div class="col-6 col-sm-3 placeholder">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+          <div class="image">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+            <h2 class="image-text">22</h2>
+          </div>
           <h4>Food</h4>
-          <span class="text-muted">Something else</span>
+          <div class="text-muted">Days left at current capacity</div>
         </div>
         <div class="col-6 col-sm-3 placeholder">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+          <div class="image">
+            <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5HhPwAH2ALxy5L8dgAAAABJRU5ErkJggg==" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+            <h2 class="image-text">10</h2>
+          </div>
           <h4>Power</h4>
-          <span class="text-muted">Something else</span>
+          <div class="text-muted">Days left at current capacity</div>
         </div>
         <div class="col-6 col-sm-3 placeholder">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-          <h4>Space</h4>
-          <span class="text-muted">Something else</span>
+          <div class="image">
+            <img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8PwHwAFKQIM6aYFngAAAABJRU5ErkJggg==" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+            <h2 class="image-text" style="left:90px">8/10</h2>
+          </div>
+          <h4>Occupancy</h4>
+          
         </div>
       </section>
 
