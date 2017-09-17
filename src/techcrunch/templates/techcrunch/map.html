@@ -1,0 +1,24 @@
+{% extends 'techcrunch/base.html' %}
+{% load staticfiles %}
+
+{% block script %}
+<script type="text/javascript">
+  window.onload = function() {
+    L.mapquest.key = 'UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU';
+
+    var map = L.mapquest.map('map', {
+      center: [37.7749, -122.4194],
+      layers: L.mapquest.tileLayer('map'),
+      zoom: 12
+    });
+
+    map.addControl(L.mapquest.control());
+  }
+</script>
+{% endblock %}
+
+{% block content %}
+<body style="border: 0; margin: 0;">
+    <div id="map" style="width: 100%; height: 530px;"></div>
+</body>
+{% endblock %}
