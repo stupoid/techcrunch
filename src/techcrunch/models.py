@@ -12,6 +12,10 @@ class Shelter(models.Model):
     need_water = models.BooleanField()
     occupancy = models.IntegerField()
     max_occupancy = models.IntegerField()
+    ready_to_accommodate = models.BooleanField()
+    power_status = models.BooleanField()
+    water_status = models.BooleanField()
+    connectivity_status = models.BooleanField()
 
 class Routes(models.Model):
     user_id = models.IntegerField()
@@ -32,3 +36,5 @@ class User(models.Model):
     last_shelter = models.IntegerField()
     name = models.CharField()
     able_bodied = models.BooleanField()
+    contact_number = models.IntegerField()
+    
