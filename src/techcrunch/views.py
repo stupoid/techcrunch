@@ -35,8 +35,11 @@ def create_shelter(request):
 def dashboard(request):
     return render(request, 'techcrunch/dashboard.html')
 
+def occupants(request):
+    return render(request, 'techcrunch/occupants.html')
+
 def map(request):
-	# r = requests.get('http://www.mapquestapi.com/directions/v2/route?key=UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU' + 
+	# r = requests.get('http://www.mapquestapi.com/directions/v2/route?key=UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU' +
 	# 				'&from=San Francisco, CA&to=Oakland,+CA')
 	# r = requests.get('http://www.mapquestapi.com/geocoding/v1/batch?key=UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU' +
 	# 				'&location=San Francisco,CA&location=Oakland,CA&location=Milbrae,CA')

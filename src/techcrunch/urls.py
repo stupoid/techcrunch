@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^logout', auth_views.logout, name='logout'),
     url(r'^signup', views.signup, name='signup'),
     url(r'^dashboard', views.dashboard, name='dashboard'),
+    url(r'^dashboard/residents', views.dashboard, name='residents'),
     url(r'^create-shelter', views.create_shelter, name='create_shelter'),
     url(r'^map/$', views.map, name='map'),
     url(r'^shelter_routing/$', views.shelter_routing, name='shelter_routing'),
