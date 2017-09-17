@@ -4,6 +4,13 @@
 {% block script %}
 <script type="text/javascript">
   window.onload = function() {
+  	L.mapquest.key = 'UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU';
+
+    var map = L.mapquest.map('map', {
+      center: [40.7385512, -74.008938],
+      layers: L.mapquest.tileLayer('map'),
+      zoom: 12
+    });
   	if (navigator.geolocation) {
         position = navigator.geolocation.getCurrentPosition(showPosition);
     }
@@ -13,13 +20,7 @@
   function showPosition(position) {
     lat = position.coords.latitude
     lon = position.coords.longitude
-    L.mapquest.key = 'UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU';
-
-    var map = L.mapquest.map('map', {
-      center: [37.7749, -122.4194],
-      layers: L.mapquest.tileLayer('map'),
-      zoom: 12
-    });
+    
 
     L.mapquest.directions().route({
           start: {
