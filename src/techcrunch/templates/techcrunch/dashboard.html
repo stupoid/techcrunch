@@ -105,47 +105,37 @@ h2.image-text {
               <th>Special Req.</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>11325</td>
-              <td>Kelvin</td>
-              <td>6021237138</td>
-              <td>2</td>
-              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
-              <td>3h 45min</td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>11325</td>
-              <td>Kelvin</td>
-              <td>6021237138</td>
-              <td>2</td>
-              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
-              <td>3h 45min</td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>11325</td>
-              <td>Kelvin</td>
-              <td>6021237138</td>
-              <td>2</td>
-              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
-              <td>3h 45min</td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>11325</td>
-              <td>Kelvin</td>
-              <td>6021237138</td>
-              <td>2</td>
-              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
-              <td>3h 45min</td>
-              <td>None</td>
-            </tr>
+          <tbody id="incoming_rows">
           </tbody>
         </table>
       </div>
     </main>
   </div>
 </div>
+<script src="{% static 'techcrunch/js/faker.min.js' %}"></script>
+<script>
+count = 5;
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+for (var i = 0; i < 4; i++) {
+  var randomName = faker.name.firstName();
+  var randomPhone = faker.phone.phoneNumber();
+  var randomAddress = faker.address.streetAddress();
+  var tr_html = document.createElement('tr');
+  var dependent = getRandomInt(0, count);
+  tr_html.innerHTML =
+  `<td>11325</td>
+    <td>${randomName}</td>
+    <td>${randomPhone}</td>
+    <td>${dependent}</td>
+    <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">${randomAddress}</a></td>
+    <td>3h 45min</td>
+    <td>None</td>`
+  document.getElementById("incoming_rows").appendChild(tr_html);
+}
+</script>
 {% endblock %}
