@@ -4,8 +4,10 @@ from . import views
 
 urlpatterns = [
     url(r'^login', auth_views.login, {'template_name': 'techcrunch/login.html'}, name='login'),
-    url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^logout', auth_views.logout, name='logout'),
     url(r'^signup', views.signup, name='signup'),
+    url(r'^dashboard', views.dashboard, name='dashboard'),
+    url(r'^create-shelter', views.create_shelter, name='create_shelter'),
     url(r'^map/$', views.map, name='map'),
     url(r'^', views.index, name='index'),
 ]

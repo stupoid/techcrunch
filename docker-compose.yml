@@ -11,7 +11,15 @@ services:
 
   shell:
     build: .
-    command: sh
+    command: python manage.py shell
+    ports:
+    - 80:8080
+    volumes:
+    - ./src:/usr/src/app
+
+  createsuperuser:
+    build: .
+    command: python manage.py createsuperuser
     ports:
     - 80:8080
     volumes:
@@ -20,6 +28,14 @@ services:
   migrate:
     build: .
     command: python manage.py migrate
+    ports:
+    - 80:8080
+    volumes:
+    - ./src:/usr/src/app
+
+  makemigrations:
+    build: .
+    command: python manage.py makemigrations
     ports:
     - 80:8080
     volumes:

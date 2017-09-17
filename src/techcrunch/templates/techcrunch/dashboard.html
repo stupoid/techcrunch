@@ -1,0 +1,128 @@
+{% extends 'techcrunch/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link href="{% static 'techcrunch/css/dashboard.css' %}" rel="stylesheet">
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Shelter A Dashboard</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Arrivals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Manage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Current Occupants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nearby Shelters</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+      <h1>Overview</h1>
+
+      <section class="row text-center placeholders">
+        <div class="col-6 col-sm-3 placeholder">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+          <h4>Water</h4>
+          <div class="text-muted">Something else</div>
+        </div>
+        <div class="col-6 col-sm-3 placeholder">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+          <h4>Food</h4>
+          <span class="text-muted">Something else</span>
+        </div>
+        <div class="col-6 col-sm-3 placeholder">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+          <h4>Power</h4>
+          <span class="text-muted">Something else</span>
+        </div>
+        <div class="col-6 col-sm-3 placeholder">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+          <h4>Space</h4>
+          <span class="text-muted">Something else</span>
+        </div>
+      </section>
+
+      <h2>Incoming Arrivals</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Dependants</th>
+              <th>Arriving From</th>
+              <th>ETA</th>
+              <th>Special Req.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>11325</td>
+              <td>Kelvin</td>
+              <td>6021237138</td>
+              <td>2</td>
+              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
+              <td>3h 45min</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>11325</td>
+              <td>Kelvin</td>
+              <td>6021237138</td>
+              <td>2</td>
+              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
+              <td>3h 45min</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>11325</td>
+              <td>Kelvin</td>
+              <td>6021237138</td>
+              <td>2</td>
+              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
+              <td>3h 45min</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>11325</td>
+              <td>Kelvin</td>
+              <td>6021237138</td>
+              <td>2</td>
+              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
+              <td>3h 45min</td>
+              <td>None</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+{% endblock %}
