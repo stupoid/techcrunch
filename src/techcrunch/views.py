@@ -35,8 +35,8 @@ def create_shelter(request):
 def dashboard(request):
     return render(request, 'techcrunch/dashboard.html')
 
-def occupants(request):
-    return render(request, 'techcrunch/occupants.html')
+def residents(request):
+    return render(request, 'techcrunch/residents.html')
 
 def map(request):
 	# r = requests.get('http://www.mapquestapi.com/directions/v2/route?key=UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU' +
