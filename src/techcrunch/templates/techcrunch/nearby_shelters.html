@@ -50,10 +50,10 @@
               <th>Contact</th>
               <th>Location</th>
               <th>Time to location</th>
-              <th>Power</th>
               <th>Water</th>
               <th>Food</th>
-              <th>Bed</th>
+              <th>Power</th>
+              <th>Occupancy</th>
             </tr>
           </thead>
           <tbody>
@@ -63,10 +63,10 @@
               <td>6021237138</td>
               <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fnew-york%2Fempire-state-building-25880101&query=Empire%20State%20Building&page=0">Empire State Building</a></td>
               <td>3h 45min</td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
+              <td><span style="color: green">24</span></td>
+              <td><span style="color: green">25</span></td>
+              <td><span style="color: green">49</span></td>
+              <td><span style="color: green">2/10</span></td>
             </tr>
             <tr>
               <td>148</td>
@@ -74,10 +74,10 @@
               <td>6021237478</td>
               <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fnew-york%2Fbroadway-theatre-1177903&query=Broadway%20Theatre&page=0">Broadway</a></td>
               <td>3h 06min</td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
+              <td><span style="color: green">35</span></td>
+              <td><span style="color: green">56</span></td>
+              <td><span style="color: green">70</span></td>
+              <td><span style="color: green">0/10</span></td>
             </tr>
             <tr>
               <td>149</td>
@@ -85,10 +85,10 @@
               <td>6021236741</td>
               <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fnew-york%2Fwashington-square-park-265788605&query=Washington%20Square%20Park&page=0">Washington Square Park</a></td>
               <td>3h 58min</td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
-              <td id="second_change"><span style="color: green">True</span></td>
+              <td><span style="color: green">25</span></td>
+              <td><span style="color: green">26</span></td>
+              <td><span style="color: green">78</span></td>
+              <td id="second_change"><span style="color: green">4/10</span></td>
             </tr>
             <tr>
               <td>301</td>
@@ -96,10 +96,10 @@
               <td>6021246172</td>
               <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fnew-york%2Fcentral-park-1180078&query=Central%20Park&page=0">Central Park</a></td>
               <td>3h 50min</td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
-              <td><span style="color: green">True</span></td>
-              <td id="change"><span style="color: red">False</span></td>
+              <td><span style="color: green">21</span></td>
+              <td><span style="color: green">22</span></td>
+              <td><span style="color: green">40</span></td>
+              <td id="change"><span style="color: red">8/10</span></td>
             </tr>
           </tbody>
         </table>
@@ -108,23 +108,4 @@
   </div>
 </div>
 
-<script>
-  window.onload = function() {
-    setInterval( function() { changeInterval(); }, 3000);
-    setInterval( function() { changeIntervalSec(); }, 9000);
-  };
-
-  function changeInterval() {
-    var x = document.getElementById("change");
-    x.innerHTML = "True";
-    x.style.color = "green";
-  }
-
-  function changeIntervalSec() {
-    var x = document.getElementById("second_change");
-    x.innerHTML = "False";
-    x.style.color = "red";
-  }
-
-</script>
 {% endblock %}
