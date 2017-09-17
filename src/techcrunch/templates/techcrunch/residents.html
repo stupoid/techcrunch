@@ -40,86 +40,108 @@
     </nav>
 
     <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-      <h1>Overview</h1>
-
-      <section class="row text-center placeholders">
-        <div class="col-6 col-sm-3 placeholder">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-          <h4>Water</h4>
-          <div class="text-muted">Something else</div>
+      <section>
+        <h2>Incoming Arrivals</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Dependants</th>
+                <th>Arriving From</th>
+                <th>ETA</th>
+                <th>Special Req.</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="incoming_rows">
+            </tbody>
+          </table>
         </div>
-        <div class="col-6 col-sm-3 placeholder">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-          <h4>Food</h4>
-          <span class="text-muted">Something else</span>
-        </div>
-        <div class="col-6 col-sm-3 placeholder">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-          <h4>Power</h4>
-          <span class="text-muted">Something else</span>
-        </div>
-        <div class="col-6 col-sm-3 placeholder">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-          <h4>Space</h4>
-          <span class="text-muted">Something else</span>
-        </div>
+        <br />
       </section>
 
-      <h2>Incoming Arrivals</h2>
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Contact</th>
-              <th>Dependants</th>
-              <th>Arriving From</th>
-              <th>ETA</th>
-              <th>Special Req.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>11325</td>
-              <td>Kelvin</td>
-              <td>6021237138</td>
-              <td>2</td>
-              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
-              <td>3h 45min</td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>11325</td>
-              <td>Kelvin</td>
-              <td>6021237138</td>
-              <td>2</td>
-              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
-              <td>3h 45min</td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>11325</td>
-              <td>Kelvin</td>
-              <td>6021237138</td>
-              <td>2</td>
-              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
-              <td>3h 45min</td>
-              <td>None</td>
-            </tr>
-            <tr>
-              <td>11325</td>
-              <td>Kelvin</td>
-              <td>6021237138</td>
-              <td>2</td>
-              <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">Fisherman's Wharf</a></td>
-              <td>3h 45min</td>
-              <td>None</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <section>
+        <h2>Current Residents <small class="text-muted"><span id="count">5</span>/20 slots occupied</small></h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Arrived On</th>
+                <th>Special Req.</th>
+              </tr>
+            </thead>
+            <tbody id="current_rows">
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
   </div>
 </div>
+<script src="{% static 'techcrunch/js/faker.min.js' %}"></script>
+<script>
+count = 5;
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function clickCheckIn(e) {
+  var child = e.target.parentNode.parentNode;
+  child.parentNode.removeChild(child);
+  var tr_html = document.createElement('tr');
+  var name = e.target.dataset.name;
+  var contact = e.target.dataset.contact;
+  tr_html.innerHTML =
+  `<tr>
+    <td>11325</td>
+    <td>${name}</td>
+    <td>${contact}</td>
+    <td>0min</td>
+    <td>None</td>
+  </tr>`;
+  document.getElementById("current_rows").appendChild(tr_html);
+  count += 1;
+  document.getElementById("count").innerHTML = count;
+}
+
+for (var i = 0; i < 5; i++) {
+  var randomName = faker.name.firstName();
+  var randomPhone = faker.phone.phoneNumber();
+  var randomAddress = faker.address.streetAddress();
+  var tr_html = document.createElement('tr');
+  tr_html.innerHTML =
+  `<td>11325</td>
+    <td>${randomName}</td>
+    <td>${randomPhone}</td>
+    <td>2</td>
+    <td><a href="https://www.mapquest.com/search/results?slug=%2Fus%2Fcalifornia%2Ffishermans-wharf-merchants-350275556&query=Fisherman%27s%20Wharf%20Merchants&page=0">${randomAddress}</a></td>
+    <td>3h 45min</td>
+    <td>None</td>
+    <td><button class="btn" data-name="${randomName}" data-contact="${randomPhone}" onclick="clickCheckIn(event)">Check in</button></td>`;
+  document.getElementById("incoming_rows").appendChild(tr_html);
+}
+for (var i = 0; i < count; i++) {
+  var randomName = faker.name.firstName();
+  var randomPhone = faker.phone.phoneNumber();
+  var randomAddress = faker.address.streetAddress();
+  var tr_html = document.createElement('tr');
+  tr_html.innerHTML =
+  `<tr>
+    <td>11325</td>
+    <td>${randomName}</td>
+    <td>${randomPhone}</td>
+    <td>${getRandomInt(0,10)}h ${getRandomInt(0, 60)}min</td>
+    <td>None</td>
+  </tr>`;
+  document.getElementById("current_rows").appendChild(tr_html);
+}
+</script>
 {% endblock %}
