@@ -36,4 +36,11 @@ def dashboard(request):
     return render(request, 'techcrunch/dashboard.html')
 
 def map(request):
+	# r = requests.get('http://www.mapquestapi.com/directions/v2/route?key=UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU' + 
+	# 				'&from=San Francisco, CA&to=Oakland,+CA')
+	# r = requests.get('http://www.mapquestapi.com/geocoding/v1/batch?key=UShjaMayAC4UkuBJ5nu5rqFuraxzEOQU' +
+	# 				'&location=San Francisco,CA&location=Oakland,CA&location=Milbrae,CA')
     return render(request, 'techcrunch/map.html')
+
+def shelter_routing(request):
+    return render(request, 'techcrunch/shelter_routing.html')

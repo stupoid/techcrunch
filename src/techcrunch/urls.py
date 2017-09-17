@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^dashboard', views.dashboard, name='dashboard'),
     url(r'^create-shelter', views.create_shelter, name='create_shelter'),
     url(r'^map/$', views.map, name='map'),
+    url(r'^shelter_routing/$', views.shelter_routing, name='shelter_routing'),
     url(r'^', views.index, name='index'),
 ]
